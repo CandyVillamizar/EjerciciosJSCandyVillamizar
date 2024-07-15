@@ -1,0 +1,67 @@
+*{  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    margin-left: 2rem;
+}
+form{
+    margin-left: 2rem;
+    width: 25rem;
+    height: 20rem;
+    border-style: double;
+    background-color: antiquewhite;
+}
+
+div{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.form-label{
+    font-size: medium;
+    color: blueviolet;
+}
+#Notas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+
+.card-body{
+    background-color: aqua;
+    width: 20rem;
+    height: 10rem;
+}
+
+#crearnota{
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(7, 191, 154);
+}
+#titulo{
+    width: 40rem;
+    margin-bottom: 0.5rem;
+}
+
+#textonota{
+    width: 40rem;
+    height: 5rem;
+    margin-bottom: 0.5rem;
+}
+
+#borrar{
+    background-color: blueviolet;
+}
+
+#botones{
+    width: 40rem;
+    margin-top: 4rem;
+}
