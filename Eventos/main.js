@@ -60,41 +60,56 @@ for (let i= 0; i<notas.length; i++) {
           <input class="form-check-input" onClick="(${notas[i].id})" type="checkbox">
           <h4 class="card-title">${notas[i].titulo}</h4>
           <p class="card-text">${notas[i].texto}.</p>
-        </div>`
+          <button id="borrar" type="text" class="btn btn-primary">Borrar</button>
+        </div>
+        `
         contenedor.appendChild(tarjeta)
       }
       pintarTarjetas(notas)
-      
   }
   
 guardar.addEventListener("click",(agregarNota) =>{
     notas.push({
-        id: idGLobal+1,
+        id: idGLobal++,
         titulo: document.getElementById("titulo").value,
         texto: document.getElementById("textonota").value,
         realizada: false
-    })
+    })   
+        document.getElementById("titulo").value=""
+        document.getElementById("textonota").value=""
+        idGLobal=notas[notas.length-1].id
     
-    document.getElementById("titulo").value=""
-    document.getElementById("textonota").value=""
-    idGLobal=notas[notas.length-1].id
-
-    espacioNota=document.createElement("div")
-    espacioNota.id=`nota${notas[notas.length-1].id}`
-    espacioNota.className=`card p-2 m-2`
-    espacioNota.innerHTML=`
-    <div ${notas[notas.length-1].id} class = "card">
+        let contenedor = document.getElementById("Notas")
+        let tarjeta = document.createElement('div')
+        tarjeta.className="card"
+        tarjeta.innerHTML = `
+        <div ${notas[notas.length-1].id} class = "card">
         </div>
         <div class="card-body">
+          <input class="form-check-input" onClick="(${notas[notas.length-1].id})" type="checkbox">
           <h4 class="card-title">${notas[notas.length-1].titulo}</h4>
           <p class="card-text">${notas[notas.length-1].texto}.</p>
+          <button id="borrar" type="text" class="btn btn-primary">Borrar</button>
         </div>
-     `
-    console.log(notas);
-    pintarTarjetas(notas)
-}   
-)
+        `
+        contenedor.appendChild(tarjeta)
+        console.log(notas);
+        pintarTarjetas(notas)   
+})
 
+function marcarRealizada(id) {
+    for (let i = 0; i< notas.length; i++) {
+        if (notas[i].id==id) {
+            if (notas[i].realizada) {
+                notas[i].realizada == false
+            }else{
+                notas[i].realizada == true
+            }
+        }
+    }
+}
+
+console.log(notas[1]);
 
 
 
