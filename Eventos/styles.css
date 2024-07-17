@@ -38,6 +38,7 @@ div{
     background-color: aqua;
     width: 20rem;
     height: 10rem;
+    padding: 0.5rem;
 }
 
 #crearnota{
@@ -64,4 +65,8 @@ div{
 #botones{
     width: 40rem;
     margin-top: 4rem;
+}
+
+#buscar{
+    width: 25rem;
 }
